@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Private Control Dashboard</title>
+
+
+  <!-- Main CSS -->
+  <link
+    rel="stylesheet"
+    href="./style.css"
+  >
+
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    crossorigin=""
+  >
+
+</head>
+
+
+<body>
+
+
+  <main class="dashboard">
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="dash-header">
+
+      <div>
+
+        <div class="eyebrow">
+          PRIVATE DASHBOARD
+        </div>
+
+        <h1>
+          🛰️ Control Room
+        </h1>
+
+        <p>
+          Only information voluntarily shared
+          through the page is displayed here.
+        </p>
+
+      </div>
+
+
+      <button
+        id="logoutBtn"
+        class="secondary"
+        type="button"
+      >
+        Log out
+      </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         LOGIN PANEL
+    ========================== -->
+
+    <section
+      id="loginPanel"
+      class="panel"
+    >
+
+      <h2>
+        🔐 Dashboard Login
+      </h2>
+
+      <p>
+        Use the Firebase Authentication
+        email/password account you created
+        for the dashboard.
+      </p>
+
+
+      <!-- Email -->
+
+      <input
+        id="email"
+        type="email"
+        placeholder="Email"
+        autocomplete="username"
+      >
+
+
+      <!-- Password -->
+
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        autocomplete="current-password"
+      >
+
+
+      <!-- Sign In -->
+
+      <button
+        id="loginBtn"
+        type="button"
+      >
+        Sign in
+      </button>
+
+
+      <!-- Login Status -->
+
+      <p
+        id="loginStatus"
+        class="status"
+      ></p>
+
+    </section>
+
+
+
+    <!-- =========================
+         DASHBOARD PANEL
+    ========================== -->
+
+    <section
+      id="dashboardPanel"
+      class="hidden"
+    >
+
+
+      <!-- =========================
+           STATISTICS
+      ========================== -->
+
+      <div class="stats">
+
+
+        <!-- Latitude -->
+
+        <div class="stat">
+
+          <span>
+            Latest Latitude
+          </span>
+
+          <strong id="lat">
+            —
+          </strong>
+
+        </div>
+
+
+        <!-- Longitude -->
+
+        <div class="stat">
+
+          <span>
+            Latest Longitude
+          </span>
+
+          <strong id="lng">
+            —
+          </strong>
+
+        </div>
+
+
+        <!-- Accuracy -->
+
+        <div class="stat">
+
+          <span>
+            Precision
+          </span>
+
+          <strong id="accuracy">
+            —
+          </strong>
+
+        </div>
+
+
+        <!-- Last Updated -->
+
+        <div class="stat">
+
+          <span>
+            Last Updated
+          </span>
+
+          <strong id="updated">
+            —
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- =========================
+           MAP
+      ========================== -->
+
+      <div id="map"></div>
+
+
+
+      <!-- =========================
+           LOCATION INFORMATION
+      ========================== -->
+
+      <div class="panel">
+
+        <h2>
+          📍 Latest Shared Data
+        </h2>
+
+
+        <div id="locationCard">
+
+          Waiting for a consent-based
+          data share…
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       LEAFLET JAVASCRIPT
+  ========================== -->
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    crossorigin="">
+  </script>
+
+
+
+  <!-- =========================
+       DASHBOARD JAVASCRIPT
+  ========================== -->
+
+  <script
+    type="module"
+    src="./dashboard.js">
+  </script>
+
+
+</body>
+
+</html>
